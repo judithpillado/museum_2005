@@ -31,15 +31,22 @@ class MuseumTest < Minitest::Test
     assert_equal [@gems_and_minerals, @dead_sea_scrolls, @imax], @dmns.exhibits
   end
 
-  def test_it_can_recommend_exhibits
+  # def test_it_can_recommend_exhibits
+  #   @dmns.add_exhibit(@gems_and_minerals)
+  #   @dmns.add_exhibit(@dead_sea_scrolls)
+  #   @dmns.add_exhibit(@imax)
+  #   @patron_1.add_interest("Dead Sea Scrolls")
+  #   @patron_1.add_interest("Gems and Minerals")
+  #   @patron_2.add_interest("IMAX")
+  #   assert_equal [@gems_and_minerals, @dead_sea_scrolls], @dmns.recommend_exhibits(@patron_1)
+  #   assert_equal [@imax], @dmns.recommend_exhibits(@patron_2)
+  # end
+
+  def test_it_starts_with_no_patrons
     @dmns.add_exhibit(@gems_and_minerals)
     @dmns.add_exhibit(@dead_sea_scrolls)
     @dmns.add_exhibit(@imax)
-    @patron_1.add_interest("Dead Sea Scrolls")
-    @patron_1.add_interest("Gems and Minerals")
-    @patron_2.add_interest("IMAX")
-    assert_equal [@gems_and_minerals, @dead_sea_scrolls], @dmns.recommend_exhibits(@patron_1)
-    assert_equal [@imax], @dmns.recommend_exhibits(@patron_2)
-  end 
+    assert_equal [], @dmns.patrons
+  end
 
 end
