@@ -11,16 +11,19 @@ class Museum
     @exhibits << exhibit
   end
 
-  # def recommend_exhibits(patron)
-  #   require "pry";binding.pry
-  #   recommended_exhibits = []
-  #     if @exhibits.name == @interests
-  #       recommended_exhibits << @exhibits
-  #   end
-  # end
-
-  def admit(patron)
-    @patrons << patron 
+  def recommend_exhibits(patron)
+    require "pry";binding.pry
+    recommend_exhibits = []
+    @exhibits.map do |exhibit|
+      if exhibit.name == patron.interests
+        recommend_exhibits << patron.interests
+      end
+    end
+    recommend_exhibits
   end
+
+  # def admit(patron)
+  #   @patrons << patron
+  # end
 
 end
