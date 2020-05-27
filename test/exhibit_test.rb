@@ -9,7 +9,7 @@ class ExhibitTest < Minitest::Test
   end
 
   def test_it_exists
-    assert_instance of Exhibit, @exhibit
-  end 
+    assert_instance_of Exhibit, @exhibit
+  end
 
 end
