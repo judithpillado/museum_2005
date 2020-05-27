@@ -1,7 +1,7 @@
 class Museum
 
   def initialize(name)
-
-  end 
+    @name = name 
+  end
 
 end
